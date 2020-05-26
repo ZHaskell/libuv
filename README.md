@@ -1,5 +1,9 @@
 ![libuv][libuv_banner]
 
+## NOTICE
+
+This fork is intended to be bundled with stdio on windows. We sync it with latest upstream release periodically.
+
 ## Overview
 
 libuv is a multi-platform support library with a focus on asynchronous I/O. It

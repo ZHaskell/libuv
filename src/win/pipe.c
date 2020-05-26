@@ -839,7 +839,7 @@ void uv_pipe_close(uv_loop_t* loop, uv_pipe_t* handle) {
 }
 
 
-static void uv_pipe_queue_accept(uv_loop_t* loop, uv_pipe_t* handle,
+void uv_pipe_queue_accept(uv_loop_t* loop, uv_pipe_t* handle,
     uv_pipe_accept_t* req, BOOL firstInstance) {
   assert(handle->flags & UV_HANDLE_LISTENING);
 
