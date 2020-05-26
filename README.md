@@ -2,7 +2,7 @@
 
 ## NOTICE
 
-This fork is intended to be bundled with stdio on windows. We sync it with latest upstream release periodically.
+This fork is for [Z](https://github.com/haskell-Z) project, pull from latest upstream release periodically.
 
 ## Overview
 
