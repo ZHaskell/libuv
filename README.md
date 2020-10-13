@@ -2,7 +2,7 @@
 
 ## NOTICE
 
-This fork is for [Z](https://github.com/haskell-Z) project, pull from latest upstream release periodically.
+This fork is for [Z](https://github.com/haskell-Z) project, [pull](https://github.com/haskell-Z/libuv/compare/v1.x-haskell-Z...libuv:v1.x) from latest upstream release periodically.
 
 ## Overview
 
