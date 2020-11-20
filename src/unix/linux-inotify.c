@@ -208,7 +208,7 @@ static void uv__inotify_read(uv_loop_t* loop,
        * for modifications. Repurpose the filename for API compatibility.
        * I'm not convinced this is a good thing, maybe it should go.
        */
-      path = e->len ? (const char*) (e + 1) : uv__basename_r(w->path);
+      path = e->len ? (const char*) (e + 1) : ""; // uv__basename_r(w->path);
 
       /* We're about to iterate over the queue and call user's callbacks.
        * What can go wrong?
