@@ -9,7 +9,7 @@ This fork is for [Z](https://github.com/haskell-Z) project, [pull](https://githu
 libuv is a multi-platform support library with a focus on asynchronous I/O. It
 was primarily developed for use by [Node.js][], but it's also
 used by [Luvit](http://luvit.io/), [Julia](http://julialang.org/),
-[pyuv](https://github.com/saghul/pyuv), and [others](https://github.com/libuv/libuv/wiki/Projects-that-use-libuv).
+[pyuv](https://github.com/saghul/pyuv), and [others](https://github.com/libuv/libuv/blob/v1.x/LINKS.md).
 
 ## Feature highlights
 
@@ -52,9 +52,8 @@ The documentation is licensed under the CC BY 4.0 license. Check the [LICENSE-do
 
 ## Community
 
- * [Support](https://github.com/libuv/help)
+ * [Support](https://github.com/libuv/libuv/discussions)
  * [Mailing list](http://groups.google.com/group/libuv)
- * [IRC chatroom (#libuv@irc.freenode.org)](http://webchat.freenode.net?channels=libuv&uio=d4)
 
 ## Documentation
 
@@ -290,6 +289,16 @@ listed in `test/benchmark-list.h`.
 
 Check the [SUPPORTED_PLATFORMS file](SUPPORTED_PLATFORMS.md).
 
+### `-fno-strict-aliasing`
+
+It is recommended to turn on the `-fno-strict-aliasing` compiler flag in
+projects that use libuv. The use of ad hoc "inheritance" in the libuv API
+may not be safe in the presence of compiler optimizations that depend on
+strict aliasing.
+
+MSVC does not have an equivalent flag but it also does not appear to need it
+at the time of writing (December 2019.)
+
 ### AIX Notes
 
 AIX compilation using IBM XL C/C++ requires version 12.1 or greater.
@@ -301,6 +310,13 @@ that is detected by `autoconf`.
 describes the package in more detail.
 
 ### z/OS Notes
+
+z/OS compilation requires [ZOSLIB](https://github.com/ibmruntimes/zoslib) to be installed. When building with [CMake][], use the flag `-DZOSLIB_DIR` to specify the path to [ZOSLIB](https://github.com/ibmruntimes/zoslib):
+
+```bash
+$ (cd build && cmake .. -DBUILD_TESTING=ON -DZOSLIB_DIR=/path/to/zoslib)
+$ cmake --build build
+```
 
 z/OS creates System V semaphores and message queues. These persist on the system
 after the process terminates unless the event loop is closed.
