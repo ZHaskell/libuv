@@ -375,7 +375,7 @@ static void CALLBACK post_write_completion(void* context, BOOLEAN timed_out) {
 }
 
 
-static void uv__tcp_queue_accept(uv_tcp_t* handle, uv_tcp_accept_t* req) {
+void uv__tcp_queue_accept(uv_tcp_t* handle, uv_tcp_accept_t* req) {
   uv_loop_t* loop = handle->loop;
   BOOL success;
   DWORD bytes;
